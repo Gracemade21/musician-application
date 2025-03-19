@@ -1,0 +1,23 @@
+{
+  "family": "musician-app",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": [ "FARGATE" ],
+  "cpu": "512",
+  "memory": "1024",
+  "executionRoleArn": "arn:aws:iam::400358200633:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "musician-app",
+      "image": "400358200633.dkr.ecr.us-east-1.amazonaws.com/musician-app:latest",
+      "memory": 512,
+      "cpu": 256,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 3001,
+          "hostPort": 3001
+        }
+      ]
+    }
+  ]
+}
